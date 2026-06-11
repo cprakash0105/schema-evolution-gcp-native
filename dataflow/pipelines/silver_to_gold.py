@@ -111,6 +111,10 @@ def commit_gold(records, project_id, region, bucket):
 
     table_id = ("gold", "customer_summary")
     try:
+        catalog.create_namespace("gold")
+    except Exception:
+        pass  # already exists
+    try:
         table = catalog.load_table(table_id)
     except Exception:
         table = catalog.create_table(

@@ -135,6 +135,12 @@ def commit_to_iceberg(records, project_id, region, bucket):
 
     catalog = get_catalog(project_id, region, bucket)
 
+    # Ensure namespace exists
+    try:
+        catalog.create_namespace("silver")
+    except Exception:
+        pass  # already exists
+
     # Create table if not exists
     table_id = ("silver", "customer")
     try:
