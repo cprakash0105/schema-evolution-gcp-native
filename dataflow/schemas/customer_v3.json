@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "fields": [
+    {"name": "customer_id", "type": "integer", "required": true},
+    {"name": "name", "type": "string", "required": true},
+    {"name": "email", "type": "string", "required": true},
+    {"name": "signup_date", "type": "string", "required": true},
+    {"name": "order_amount", "type": "long", "required": true},
+    {"name": "loyalty_tier", "type": "string", "required": false}
+  ]
+}

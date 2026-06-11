@@ -1,0 +1,9 @@
+{
+  "dataset": "customer",
+  "compatibility_mode": "BACKWARD",
+  "rules": {
+    "allowed": ["ADD_NULLABLE_COLUMN", "TYPE_WIDEN"],
+    "controlled": ["RENAME_COLUMN", "DROP_COLUMN"],
+    "blocked": ["TYPE_NARROW", "TYPE_INCOMPATIBLE", "NULLABLE_TO_REQUIRED"]
+  }
+}

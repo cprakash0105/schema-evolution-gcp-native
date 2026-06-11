@@ -1,0 +1,10 @@
+{"cust_id":1001,"name":"John Smith","email":"john.smith@example.com","signup_date":"2025-01-15","order_amount":5000,"legacy_flag":1}
+{"cust_id":1002,"name":"Jane Doe","email":"jane.doe@example.com","signup_date":"2025-02-20","order_amount":12000,"legacy_flag":0}
+{"cust_id":1003,"name":"Bob Wilson","email":"bob.wilson@example.com","signup_date":"2025-03-10","order_amount":3500,"legacy_flag":1}
+{"cust_id":1004,"name":"Alice Brown","email":"alice.brown@example.com","signup_date":"2025-03-15","order_amount":8200,"legacy_flag":0}
+{"cust_id":1005,"name":"Charlie Davis","email":"charlie.d@example.com","signup_date":"2025-04-01","order_amount":950,"legacy_flag":1}
+{"cust_id":1006,"name":"Diana Prince","email":"diana.p@example.com","signup_date":"2025-04-10","order_amount":22000,"legacy_flag":0}
+{"cust_id":1007,"name":"Edward Fox","email":"edward.f@example.com","signup_date":"2025-04-22","order_amount":4100,"legacy_flag":1}
+{"cust_id":1008,"name":"Fiona Green","email":"fiona.g@example.com","signup_date":"2025-05-01","order_amount":6700,"legacy_flag":0}
+{"cust_id":1009,"name":"George Hill","email":"george.h@example.com","signup_date":"2025-05-05","order_amount":1200,"legacy_flag":1}
+{"cust_id":1010,"name":"Helen Irwin","email":"helen.i@example.com","signup_date":"2025-05-10","order_amount":18500,"legacy_flag":0}

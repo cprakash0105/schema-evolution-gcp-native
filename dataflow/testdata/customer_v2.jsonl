@@ -1,0 +1,8 @@
+{"cust_id":2001,"name":"Sarah Green","email":"sarah.g@example.com","signup_date":"2025-05-15","order_amount":15000,"legacy_flag":0,"loyalty_tier":"Gold"}
+{"cust_id":2002,"name":"Tom Black","email":"tom.b@example.com","signup_date":"2025-05-20","order_amount":2200,"legacy_flag":1,"loyalty_tier":"Bronze"}
+{"cust_id":2003,"name":"Lisa White","email":"lisa.w@example.com","signup_date":"2025-06-01","order_amount":45000,"legacy_flag":0,"loyalty_tier":"Platinum"}
+{"cust_id":2004,"name":"Mark Evans","email":"mark.e@example.com","signup_date":"2025-06-05","order_amount":7800,"legacy_flag":0,"loyalty_tier":"Silver"}
+{"cust_id":2005,"name":"Nancy Ford","email":"nancy.f@example.com","signup_date":"2025-06-10","order_amount":3200,"legacy_flag":1,"loyalty_tier":"Bronze"}
+{"cust_id":2006,"name":"Oscar Grant","email":"oscar.g@example.com","signup_date":"2025-06-12","order_amount":91000,"legacy_flag":0,"loyalty_tier":"Platinum"}
+{"cust_id":2007,"name":"Paula Hart","email":"paula.h@example.com","signup_date":"2025-06-15","order_amount":12500,"legacy_flag":0,"loyalty_tier":"Gold"}
+{"cust_id":2008,"name":"Quinn James","email":"quinn.j@example.com","signup_date":"2025-06-18","order_amount":500,"legacy_flag":1,"loyalty_tier":"Bronze"}

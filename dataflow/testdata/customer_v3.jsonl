@@ -1,0 +1,5 @@
+{"customer_id":3001,"name":"Rachel King","email":"rachel.k@example.com","signup_date":"2025-07-01","order_amount":28000,"loyalty_tier":"Gold"}
+{"customer_id":3002,"name":"Steve Long","email":"steve.l@example.com","signup_date":"2025-07-05","order_amount":4500,"loyalty_tier":"Silver"}
+{"customer_id":3003,"name":"Tina Moore","email":"tina.m@example.com","signup_date":"2025-07-10","order_amount":67000,"loyalty_tier":"Platinum"}
+{"customer_id":3004,"name":"Umar Nash","email":"umar.n@example.com","signup_date":"2025-07-12","order_amount":1800,"loyalty_tier":"Bronze"}
+{"customer_id":3005,"name":"Vera Owen","email":"vera.o@example.com","signup_date":"2025-07-15","order_amount":9300,"loyalty_tier":"Silver"}

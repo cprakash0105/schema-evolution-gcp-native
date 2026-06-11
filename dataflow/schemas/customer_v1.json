@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "fields": [
+    {"name": "cust_id", "type": "integer", "required": true},
+    {"name": "name", "type": "string", "required": true},
+    {"name": "email", "type": "string", "required": true},
+    {"name": "signup_date", "type": "string", "required": true},
+    {"name": "order_amount", "type": "integer", "required": true},
+    {"name": "legacy_flag", "type": "integer", "required": true}
+  ]
+}
