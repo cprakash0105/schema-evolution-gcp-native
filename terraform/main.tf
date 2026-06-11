@@ -51,7 +51,7 @@ resource "google_storage_bucket" "lakehouse" {
 
 # Create folder placeholders
 resource "google_storage_bucket_object" "folders" {
-  for_each = toset(["source/", "bronze/", "silver/", "gold/", "spark/"])
+  for_each = toset(["landing/", "bronze/", "silver/", "gold/", "spark/"])
   name     = each.value
   bucket   = google_storage_bucket.lakehouse.name
   content  = " "
