@@ -56,19 +56,8 @@ SOURCE_SCHEMAS = {
 
 
 def create_spark_session(project_id, region):
-    """Create Spark session with Iceberg + BLMS catalog configured."""
-    return (
-        SparkSession.builder
-        .appName("BronzeToSilver")
-        # Iceberg catalog configuration using BLMS
-        .config("spark.sql.catalog.lakehouse", "org.apache.iceberg.spark.SparkCatalog")
-        .config("spark.sql.catalog.lakehouse.catalog-impl", "org.apache.iceberg.gcp.biglake.BiglakeCatalog")
-        .config("spark.sql.catalog.lakehouse.gcp_project", project_id)
-        .config("spark.sql.catalog.lakehouse.gcp_location", region)
-        .config("spark.sql.catalog.lakehouse.blms_catalog", "schema_poc")
-        .config("spark.sql.catalog.lakehouse.warehouse", f"gs://{project_id}-lakehouse")
-        .getOrCreate()
-    )
+    """Create Spark session — catalog config passed via --properties at submit time."""
+    return SparkSession.builder.appName("BronzeToSilver").getOrCreate()
 
 
 def schema_bridge(df, schema_version):

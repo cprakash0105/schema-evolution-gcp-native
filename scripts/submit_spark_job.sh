@@ -24,8 +24,8 @@ gcloud dataproc batches submit pyspark \
   --service-account=${SA_EMAIL} \
   --subnet=${SUBNET} \
   --version=2.2 \
-  --properties="^#^spark.jars.packages=org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.6.1#spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions" \
-  --jars=gs://spark-lib/biglake/biglake-catalog-iceberg1.2.0-0.1.1-with-dependencies.jar \
+  --jars=gs://spark-lib/biglake/biglake-catalog-iceberg1.5.1-0.1.2-with-dependencies.jar \
+  --properties="spark.sql.catalog.lakehouse=org.apache.iceberg.spark.SparkCatalog,spark.sql.catalog.lakehouse.catalog-impl=org.apache.iceberg.gcp.biglake.BiglakeCatalog,spark.sql.catalog.lakehouse.gcp_project=${PROJECT_ID},spark.sql.catalog.lakehouse.gcp_location=${REGION},spark.sql.catalog.lakehouse.blms_catalog=schema_poc,spark.sql.catalog.lakehouse.warehouse=gs://${BUCKET}" \
   -- --schema_version=${SCHEMA_VERSION} --project=${PROJECT_ID} --region=${REGION}
 
 echo "=== Done ==="
