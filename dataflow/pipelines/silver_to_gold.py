@@ -68,13 +68,15 @@ class AggregateFn(beam.CombineFn):
 
 def read_silver_table(project_id, region, bucket):
     """Read all records from Silver Iceberg table via PyIceberg."""
+    from pyiceberg.catalog import load_catalog
+
     catalog = load_catalog(
-        "blms",
+        "lakehouse",
         **{
-            "type": "rest",
-            "uri": f"https://biglake.googleapis.com/iceberg/v1/projects/{project_id}/locations/{region}/catalogs/schema_poc",
+            "type": "sql",
+            "uri": f"sqlite:///{bucket}_catalog.db",
             "warehouse": f"gs://{bucket}",
-            "credential": "default",
+            "py-io-impl": "pyiceberg.io.fsspec.FsspecFileIO",
         }
     )
     table = catalog.load_table(("silver", "customer"))
@@ -95,13 +97,15 @@ def commit_gold(records, project_id, region, bucket):
     if not records:
         return
 
+    from pyiceberg.catalog import load_catalog
+
     catalog = load_catalog(
-        "blms",
+        "lakehouse",
         **{
-            "type": "rest",
-            "uri": f"https://biglake.googleapis.com/iceberg/v1/projects/{project_id}/locations/{region}/catalogs/schema_poc",
+            "type": "sql",
+            "uri": f"sqlite:///{bucket}_catalog.db",
             "warehouse": f"gs://{bucket}",
-            "credential": "default",
+            "py-io-impl": "pyiceberg.io.fsspec.FsspecFileIO",
         }
     )
 

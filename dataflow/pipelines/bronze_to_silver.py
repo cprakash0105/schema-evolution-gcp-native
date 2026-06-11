@@ -114,21 +114,26 @@ class DedupFn(beam.CombineFn):
         return accumulator
 
 
+def get_catalog(project_id, region, bucket):
+    """Load Iceberg catalog — uses Hadoop (filesystem) catalog on GCS."""
+    return load_catalog(
+        "lakehouse",
+        **{
+            "type": "sql",
+            "uri": f"sqlite:///{bucket}_catalog.db",
+            "warehouse": f"gs://{bucket}",
+            "py-io-impl": "pyiceberg.io.fsspec.FsspecFileIO",
+        }
+    )
+
+
 def commit_to_iceberg(records, project_id, region, bucket):
-    """Write records to Iceberg table via PyIceberg + BLMS."""
+    """Write records to Iceberg table via PyIceberg."""
     if not records:
         logger.info("No records to commit")
         return
 
-    catalog = load_catalog(
-        "blms",
-        **{
-            "type": "rest",
-            "uri": f"https://biglake.googleapis.com/iceberg/v1/projects/{project_id}/locations/{region}/catalogs/schema_poc",
-            "warehouse": f"gs://{bucket}",
-            "credential": "default",
-        }
-    )
+    catalog = get_catalog(project_id, region, bucket)
 
     # Create table if not exists
     table_id = ("silver", "customer")
